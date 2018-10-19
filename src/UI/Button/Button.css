@@ -1,0 +1,23 @@
+.Button button {
+  border: none;
+  padding: 5px;
+  width: 120px;
+  height: 38px;
+/*    background-color: cornflowerblue;*/
+  background-color: #3e65cf;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9em;
+  box-shadow: 0 2px 3px #3b5998; 
+  cursor: pointer;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+.Button button:hover {
+  background-color: #F44336;
+  box-shadow: 0 2px 3px #ed4e36; 
+}
+.Button button:disabled {
+  cursor: not-allowed;
+}

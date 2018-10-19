@@ -1,0 +1,65 @@
+/* .container {
+  box-sizing: border-box;
+  width: 400px;
+  height: 550px;
+  margin: 80px auto;
+  padding: 10px;
+  box-shadow: 0 2px 3px #ccc;
+  border: 1px solid #eee;
+  text-align: center;
+}
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=password],
+select {
+  padding: 5px 6px;
+  font-size: 0.9em;
+  border: none;
+  border-bottom: 1px solid #eee;
+  width: 250px;
+  display: block;
+  margin: 20px auto;
+}
+
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+select:focus,
+input[type=text]:hover,
+input[type=tel]:hover,
+input[type=email]:hover,
+input[type=password]:hover,
+select:hover {
+  outline: none;
+  border-bottom: 2px solid #3e65cf;
+}
+
+button {
+  border: none;
+  padding: 5px;
+  width: 120px;
+  height: 38px;
+  background-color: #3e65cf;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9em;
+  box-shadow: 0 2px 3px #3b5998; 
+  cursor: pointer;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #F44336;
+  box-shadow: 0 2px 3px #ed4e36; 
+} */
+
+.Signup h1, h2 {
+  color: #F44336;
+}
+.Signup h2 {
+  margin-bottom: 40px;
+}
+

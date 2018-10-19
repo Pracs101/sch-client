@@ -1,0 +1,11 @@
+.Container {
+  box-sizing: border-box;
+  width: 400px;
+  height: 550px;
+  margin: 80px auto;
+  padding: 10px;
+  box-shadow: 0 2px 3px #ccc;
+  border: 1px solid #eee;
+  text-align: center;
+  overflow: auto;
+}

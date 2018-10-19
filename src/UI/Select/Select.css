@@ -1,0 +1,15 @@
+.Select select {
+  padding: 5px 6px;
+  font-size: 0.9em;
+  border: none;
+  border-bottom: 1px solid #eee;
+  width: 250px;
+  display: block;
+  margin: 20px auto;
+}
+
+.Select select:focus,
+.Select select:hover {
+  outline: none;
+  border-bottom: 2px solid #3e65cf;
+}
