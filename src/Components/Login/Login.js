@@ -31,7 +31,6 @@ class Login extends Component {
       .then(res => {
         console.log(res);
         if(res) {
-          // console.log('dept',res.data.data.dept);
           SaveItem('token', res.data.token);
           SaveItem('id', res.data.data._id);
           SaveItem('dept', res.data.data.dept);

@@ -6,9 +6,8 @@ import classes from './NavigationItems.css';
 const nav = (props) => {
   return (
     <ul className={classes.Nav} >
-      <NavItem link="/admin/home" exact right >Home</NavItem>
-      <NavItem link="/admin/addpost" exact right >Add Post</NavItem>
-      <NavItem link="/admin/addstaff" exact right >Add Staff</NavItem>
+      <NavItem link="/admin/scholarship" exact right >Scholarship</NavItem>
+      <NavItem link="/admin/notice" exact right >Notice</NavItem>
       <NavItem link="/admin/logout" exact right >Logout</NavItem>
     </ul>
   );

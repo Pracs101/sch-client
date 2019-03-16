@@ -4,7 +4,6 @@ import Aux from '../../../HOC/Auxx/Auxx';
 import classes from './PerfectNav.css';
 import Toolbar from '../Toolbar/Toolbar';
 import SideDrawer from '../SideDrawer/SideDrawer';
-import Footer from '../../Footer/Footer';
 
 class PerfectNav extends Component {
     state = {
@@ -42,7 +41,6 @@ class PerfectNav extends Component {
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
-                <Footer />
             </Aux>
         )
     }

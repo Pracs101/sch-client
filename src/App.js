@@ -14,8 +14,6 @@ class App extends Component {
 
   changeState = (login, logout,  admin) => {
     this.setState({ login, logout, admin  });
-    console.log('state:', this.state);
-    
   }
   componentDidMount() {
     autoLogin(this.changeState);

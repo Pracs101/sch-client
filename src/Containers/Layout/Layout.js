@@ -16,6 +16,7 @@ import Chat from '../../Components/Dept/Chat/Chat';
 import Profile from '../../Components/Profile/Profile';
 // import Toolbar from '../../Components/Navigation/Toolbar/Toolbar';
 import PerfectNav from '../../Components/Navigation/PerfectNav/PerfectNav';
+import Sch from '../../Components/Scholarship/Scholarship';
 
 class Layout extends Component {
   state = {
@@ -62,12 +63,9 @@ class Layout extends Component {
       this.switchToAdminHandler();
       this.loginHandler();
     }
-    console.log('Layout: ', this.state);
-    
   }
 
   render() {
-    console.log(this.props.history)
     let ren;
     if(!this.state.isAuth) {
       ren = <Auth setDept={this.setDept} auth={this.loginHandler} switchToAdmin={this.switchToAdminHandler} setWallFlag={this.setWallFlagHandler}  />;
@@ -92,9 +90,8 @@ class Layout extends Component {
             <Aux>
               <PerfectNav admin={this.state.isAdmin}>
               <Switch>
-                <Route path="/admin/home" exact component={AdminHome} />
-                <Route path="/admin/addpost" exact component={() => <AddPost url="/posts" />} />
-                <Route path="/admin/addstaff" exact component={() => <Signup isStaff="true" title="Add staff"/>} />} />
+                <Route path="/admin/notice" exact component={AdminHome} />
+                <Route path="/admin/scholarship" exact component={() => <Sch /> }/>
                 <Route path="/admin/logout" exact component={() => <AdminLogout logout={this.adminLogoutHandler} />} />
               </Switch>
               </PerfectNav>       

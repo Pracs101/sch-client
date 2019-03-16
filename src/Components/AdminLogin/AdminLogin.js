@@ -14,7 +14,7 @@ class Login extends Component {
   state = {
     id: '',
     password: '',
-      loading: false
+    loading: false
   }
   inputChangedHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -23,24 +23,21 @@ class Login extends Component {
       this.setState({loading: true});
     e.preventDefault();
     const data = {
-      id: this.state.id,
+      uname: this.state.id,
       password: this.state.password
     };
     axios.post('/admin/login', data)
       .then(res => {
-        console.log(res);
         if(res) {
-          SaveItem('token', res.data.token);
+          SaveItem('token', res.headers['x-auth']);
           SaveItem('id', res.data.data._id);
           this.props.switchToAdmin();
-          this.props.history.replace('/admin/home');
+          this.props.history.replace('/admin/scholarship');
           this.props.auth();
         }
-        console.log(this.props.history);
         this.setState({loading: false});
       })
       .catch(e => {
-        console.log(e.response);
         this.setState({loading: false});
       })
   }
@@ -56,7 +53,7 @@ class Login extends Component {
           <h1>Connect</h1>
           <h2>Admin Login</h2>
           <form method="POST" onSubmit={(e) => this.onSubmitDataHandler(e)}>
-              <Input type="tel" value={this.state.sapid} onChange={(e) => this.inputChangedHandler(e)} placeholder="Your ID" name="id" minLength="11" maxLength="11" required />
+              <Input type="text" value={this.state.sapid} onChange={(e) => this.inputChangedHandler(e)} placeholder="Username" name="id" required />
               <Input type="password" value={this.state.password} onChange={(e) => this.inputChangedHandler(e)} placeholder="Password" name="password" minLength="8" maxLength="20" required />
               <Button>Login</Button>
           </form>

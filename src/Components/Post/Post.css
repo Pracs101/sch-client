@@ -1,18 +1,12 @@
 .Post {
-  width: 900px;
-  height: 300px;
+  width: 80%;
+  height: 20%;
   /* overflow: scroll; */
-  box-sizing: border-box;
   box-shadow: 0 2px 3px #ccc;
   border: 1px solid #eee;
-  margin: 50px auto;
-  padding: 20px 50px;
+  margin: 2% auto;
+  padding: 0;
 }
-
-.Post h1{
-  color: #F44336;
-}
-
-.Header {
-  display: inline-block;
-}
+ p, small {
+   margin: 2%;
+ }
