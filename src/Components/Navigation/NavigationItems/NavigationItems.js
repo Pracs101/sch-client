@@ -7,8 +7,7 @@ const nav = (props) => {
   return (
     <ul className={classes.Nav} >
       <NavItem link="/home" exact right >Home</NavItem>
-      <NavItem link="/wall" exact right >Wall</NavItem>
-      <NavItem link="/dept" exact right >Department</NavItem>
+      <NavItem link="/scholarship" exact right >Scholarship</NavItem>
       <NavItem link="/profile" exact right >Profile</NavItem>
       <NavItem link="/logout" exact right >Logout</NavItem>
     </ul>

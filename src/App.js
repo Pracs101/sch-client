@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Layout from './Containers/Layout/Layout';
 import autoLogin from './HOC/AutoLogin/AutoLogin';
-import axios from './Axios';
 
 class App extends Component {
 

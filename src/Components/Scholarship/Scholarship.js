@@ -6,6 +6,7 @@ import classes from './Scholarship.module.css';
 import AddButton from '../../UI/Icons/AddButton/AddButton';
 import axios from '../../Axios';
 import Sch from './Sch/Sch';
+import ListIcon from '../../UI/Icons/ListIcon/ListIcon';
 
 class Scholarship extends Component {
   state = {
@@ -69,10 +70,26 @@ class Scholarship extends Component {
       })
   }
   render() {
-    let ren = (
-      <div>
+    let btn = (
+      <div className={classes.MainDivButton}>
         <div className={module.Button1} >
           <Button onClick={this.onClickAdd} >Add Scholarship</Button>
+        </div>    
+      </div>
+    );
+    if(this.props.user) {
+      btn = null;
+    }
+    let ren = (
+      <div>
+        {btn}
+        <div className={classes.mainDivScholar}>
+          <div className={classes.ScholarDiv}>
+            <ListIcon />
+          </div>
+          <div className={classes.ScholarDiv}>
+            All Scholarships
+          </div>
         </div>
         {this.state.schs.map((s, i) => {
           return (
@@ -95,9 +112,9 @@ class Scholarship extends Component {
       ren = (
         <div className={module.Form} >  
           <form method='POST' onClick={this.onSubmit} >
-            <input type='text' placeholder='Enter Category' value={this.state.category} onChange={this.onInputChangeHandler} name='category' /> <br />
-            <input type='text' placeholder='Enter Scholarship name' value={this.state.schName} onChange={this.onInputChangeHandler} name='schName' /> <br />
-            <textarea placeholder='Overview' rows='4' cols='20' name='overview' value={this.state.overview} onChange={this.onInputChangeHandler} ></textarea> <br />
+            <Input type='text' placeholder='Enter Category' value={this.state.category} onChange={this.onInputChangeHandler} name='category' /> <br />
+            <Input type='text' placeholder='Enter Scholarship name' value={this.state.schName} onChange={this.onInputChangeHandler} name='schName' /> <br />
+            <textarea placeholder='Overview' rows='4' cols='85' name='overview' value={this.state.overview} onChange={this.onInputChangeHandler} ></textarea> <br />
             {this.state.criteria.map((c, i) => {
               return (
                 <div key={i} >
@@ -105,8 +122,10 @@ class Scholarship extends Component {
                 </div>
               );
             })}
-            <input type='text' placeholder='Enter criteria' value={this.state.criteriaF} onChange={this.onInputChangeHandler} name='criteriaF' /> 
-            <AddButton onClick={this.addCritera} />
+            <Input type='text' placeholder='Enter criteria' value={this.state.criteriaF} onChange={this.onInputChangeHandler} name='criteriaF' /> 
+            <div className={classes.InputAddBtn}>
+              <AddButton onClick={this.addCritera} />
+            </div>
             <br />
             {this.state.docs.map((d, i) => {
               return (
@@ -114,15 +133,19 @@ class Scholarship extends Component {
                   {d}
                 </div>
               );
-            })}
-            <input type='text' placeholder='Enter document' value={this.state.docF} onChange={this.onInputChangeHandler} name='docF' /> 
-            <AddButton onClick={this.addDoc} />
+            })} 
+            <Input type='text' placeholder='Enter document' value={this.state.docF} onChange={this.onInputChangeHandler} name='docF' /> 
+            <div className={classes.InputAddBtn}>
+              <AddButton onClick={this.addDoc} />
+            </div>
             <br />
-            <textarea placeholder='benifits' rows='4' cols='20' name='benifits' value={this.state.benifits} onChange={this.onInputChangeHandler} ></textarea> <br />
-            <input type='text' placeholder='Enter Link' value={this.state.link} onChange={this.onInputChangeHandler} name='link' /> <br />
+            <textarea placeholder='benifits' rows='4' cols='85' name='benifits' value={this.state.benifits} onChange={this.onInputChangeHandler} ></textarea> <br />
+            <Input type='text' placeholder='Enter Link' value={this.state.link} onChange={this.onInputChangeHandler} name='link' /> <br />
             <Button>Add</Button>
           </form>
-          <Button onClick={this.onClickAdd} >Back</Button>
+          <div className={classes.BackButton}>
+            <Button onClick={this.onClickAdd}>Back</Button>
+          </div>
         </div>
       );
     }

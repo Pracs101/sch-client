@@ -1,0 +1,37 @@
+.NoticeTag {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+.Tooltip,
+.Close {
+  width: 5in;
+  height: 7.5in;
+  position: fixed;
+  top:auto;
+  bottom:0px;
+  right:0px;
+  left:auto;
+ }
+ .Close {
+   display: none;
+ }
+
+.chatbox {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.livedis {
+  margin-bottom: 10px;
+}
+
+.Icon {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+}

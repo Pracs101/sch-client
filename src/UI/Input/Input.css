@@ -2,13 +2,13 @@
 .Input input[type=tel],
 .Input input[type=email],
 .Input input[type=password] {
-  padding: 5px 6px;
   font-size: 0.9em;
-  border: none;
-  border-bottom: 1px solid #eee;
-  width: 250px;
-  display: block;
-  margin: 20px auto;
+  border: 1px solid #eee;
+  padding: 1.5%;
+  border-radius: 10px;
+  width: 50%;
+  margin: 1.2%;
+  height: 15px;
 }
 
 /* .Input input[type=textbox] {
@@ -22,7 +22,7 @@
     resize: none;
 } */
 
-.Input input[type=text]:focus,
+/* .Input input[type=text]:focus,
 .Input input[type=tel]:focus,
 .Input input[type=email]:focus,
 .Input input[type=password]:focus,
@@ -32,4 +32,4 @@
 .Input input[type=password]:hover {
   outline: none;
   border-bottom: 2px solid #3e65cf;
-}
+} */

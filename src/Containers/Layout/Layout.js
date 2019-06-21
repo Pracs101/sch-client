@@ -8,11 +8,7 @@ import AdminLogout from '../../Components/Logout/AdminLogout';
 import Home from '../../Components/Home/Home';
 import RemoveItem from '../../HOC/LocalStorage/RemoveItem';
 import AdminHome from '../../Components/Admin/Home/Home';
-import AddPost from '../../Components/Admin/AddPost/AddPost'; 
-import Signup from '../../Components/Signup/Signup';
-import Wall from '../../Components/Wall/Wall';
-import Dept from '../../Components/Dept/Dept';
-import Chat from '../../Components/Dept/Chat/Chat';
+import Scholarship from '../../Components/Scholarship/Scholarship';
 import Profile from '../../Components/Profile/Profile';
 // import Toolbar from '../../Components/Navigation/Toolbar/Toolbar';
 import PerfectNav from '../../Components/Navigation/PerfectNav/PerfectNav';
@@ -76,9 +72,7 @@ class Layout extends Component {
               <PerfectNav admin={this.state.isAdmin}>
               <Switch>
                 <Route path="/home" component={Home} />
-                <Route path="/dept" exact component={() => <Dept />} />
-                <Route path="/dept/chat" exact component={() => <Chat />} />
-                <Route path="/wall" component={() => <Wall dept={this.state.dept} isWall={this.state.isWallFlag} />} />
+                <Route path="/scholarship" component={() => <Scholarship user />} />
                 <Route path="/profile" component={() => <Profile />} />
                 <Route path="/logout" exact component={() => <Logout logout={this.logoutHandler} />} />
               </Switch>

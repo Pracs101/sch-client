@@ -12,3 +12,55 @@
 .ProfileDescMore {
     font-size: 18px;
 }
+.Group {
+    border: 1px solid #ccc;
+}
+
+form {
+    text-align: center;
+}
+
+.ProfileMainDiv {
+    padding: 1%;
+}
+
+.Profiletag {
+    background-color: #27aee3;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-radius: 8px;
+    padding: 1%;
+    font-size: 1.1em;
+}
+
+.ProfileData {
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+
+.Flexing {
+    display: flex;
+    padding: 1%;
+}
+
+.FlexingTitle {
+    display: flex;
+    padding: 1%;
+}
+
+.FlexingTitle.heading {
+    font-size: 1.3em;
+}
+
+.FlexingTitle.content {
+    font-size: 1.0em;
+}
+
+.heading {
+    font-size: 1.0em;
+}
+
+.content {
+    font-size: 1.0em;
+}

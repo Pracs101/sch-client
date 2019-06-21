@@ -10,3 +10,8 @@
  p, small {
    margin: 2%;
  }
+
+small {
+   color: #27aee3;
+   font-weight: bold;
+ }

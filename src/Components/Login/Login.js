@@ -12,7 +12,7 @@ import Spinner from '../../UI/Spinner/Spinner';
 
 class Login extends Component {
   state = {
-    sapid: '',
+    phoneNumber: '',
     password: '',
     token: '',
     loading: false
@@ -24,36 +24,22 @@ class Login extends Component {
     this.setState({loading: true});
     e.preventDefault();
     const data = {
-      sapid: this.state.sapid,
+      phoneNumber: this.state.phoneNumber,
       password: this.state.password
     };
     axios.post('/user/login', data)
       .then(res => {
-        console.log(res);
         if(res) {
-          SaveItem('token', res.data.token);
-          SaveItem('id', res.data.data._id);
-          SaveItem('dept', res.data.data.dept);
-          SaveItem('name', res.data.data.name);
-          SaveItem('type', res.data.data.type);
-          console.log('--------');
-          this.setState({ token: res.data.token });
-          console.log(res.data.token);
-          console.log('flag', res.data.data.wallFlag);
-          if(res.data.data.wallFlag === 'true') {
-            this.props.setWallFlag();
-            console.log('after call');
-            
-          }
+          SaveItem('fname', res.data.data.fname);
+          SaveItem('token', res.headers['x-auth']);
+          SaveItem('id', res.data.data.userID);
+          this.setState({ token: res.headers['x-auth'] });
           this.props.history.replace('/home');
           this.props.auth();        
-          this.props.setDept(res.data.data.dept);
-            this.setState({loading: false});
-        }
-        console.log(this.props.history);
+          this.setState({loading: false});
+        } 
       })
       .catch(e => {
-        console.log(e.response);
         this.setState({loading: false});
       })
   }
@@ -69,7 +55,7 @@ class Login extends Component {
           <h1>Connect</h1>
           <h2>Login</h2>
           <form method="POST" onSubmit={(e) => this.onSubmitDataHandler(e)}>
-              <Input type="tel" value={this.state.sapid} onChange={(e) => this.inputChangedHandler(e)} placeholder="Your SAP ID" name="sapid" minLength="11" maxLength="11" required />
+              <Input type="tel" value={this.state.phoneNumber} onChange={(e) => this.inputChangedHandler(e)} placeholder="Phone number" name="phoneNumber" minLength="10" maxLength="10" required />
               <Input type="password" value={this.state.password} onChange={(e) => this.inputChangedHandler(e)} placeholder="Password" name="password" minLength="8" maxLength="20" required />
               <p><a href="/signup">Signup?</a></p>
               <Button>Login</Button>
